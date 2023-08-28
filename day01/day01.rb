@@ -14,7 +14,16 @@ end
 
 results = data
     .map(&:to_i)
-p results
+
+
+def sum_by_3(arr)
+  arr = arr.each_cons(3).map(&:sum).chunk_while { |a, b| b > a }
+ # arr.map(&:size)
+  # arr.chunk_while { |a, b| b > a }
+  arr.map { _1.size - 1}.sum
+end
+
+p sum_by_3(results)
 
 __END__
 199
